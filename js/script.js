@@ -24,7 +24,9 @@ const fetchPokemon = async (pokemon) => {
 const renderPokemon = async (pokemon) => {
     pokemonName.innerHTML = 'Loading ...';
     const data = await fetchPokemon(pokemon);
-    currentPokemon = pokemon;
+
+    currentPokemon = parseInt(data.id);
+
     if (data) {
         pokemonName.innerHTML = data.name;
         pokemonNumber.innerHTML = data.id;
@@ -60,14 +62,14 @@ form.addEventListener('submit', (event) => {
 
 prev.addEventListener('click', (event) => {
     if (currentPokemon > 1) {
-        currentPokemon -= 1;
+        currentPokemon = parseInt(currentPokemon) - 1;
         renderPokemon(currentPokemon)
     }
 });
 
 next.addEventListener('click', (event) => {
     if (currentPokemon < maxPokemons) {
-        currentPokemon += 1;
+        currentPokemon = parseInt(currentPokemon) + 1;
         renderPokemon(currentPokemon)
     }
 });
