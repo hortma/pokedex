@@ -1,5 +1,5 @@
 # PokeDex Project
-Utilizes JavaScript, CSS, HTML and DOM.
+Utilizes JavaScript, CSS, HTML, DOM and an API.
 
  Check it yourself!
  https://hortma.github.io/pokedex/
